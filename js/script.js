@@ -6,8 +6,6 @@ const QUOTES = [
   "Your smile is my favorite sunrise."
 ];
 const QUOTES_FONT = ['quote1','quote2','quote3','quote4','quote5'];
-const FINAL_NAME = 'Mariyam';
-const FINAL_DATE = '18 September';
 const NUM_PHOTOS = 8;
 
 let iconInterval;
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   async function startQuotesFlow(){
     clearInterval(iconInterval); floating.innerHTML='';
     quotesSection.classList.remove('hidden');
-
     const m1 = document.getElementById('music1');
     try{ await m1.play(); m1.volume=0.7; }catch(e){}
 
@@ -43,10 +40,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       container.innerHTML = `<span class='${fontClass}'></span>`;
       const span = container.querySelector('span');
       let i=0;
-      function step(){
-        if(i<text.length){ span.innerHTML += text[i]; i++; setTimeout(step,90); }
-        else resolve();
-      }
+      function step(){ if(i<text.length){ span.innerHTML += text[i]; i++; setTimeout(step,90); } else resolve(); }
       step();
     });
   }
@@ -101,14 +95,41 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function step(){ if(i<text.length){ container.innerHTML+=text[i]; i++; setTimeout(step,90);} }
     step();
   }
-});    typeQuote(QUOTES[currentIndex % QUOTES.length]);
+
+  // Particle Hearts Background
+  const canvas = document.getElementById('heart-canvas');
+  const ctx = canvas.getContext('2d');
+  let hearts = [];
+  function resizeCanvas(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resizeCanvas); resizeCanvas();
+
+  class Heart{
+    constructor(){
+      this.x = Math.random()*canvas.width;
+      this.y = canvas.height + Math.random()*100;
+      this.size = 10 + Math.random()*10;
+      this.speed = 1 + Math.random()*2;
+      this.opacity = 0.5 + Math.random()*0.5;
+    }
+    draw(){
+      ctx.fillStyle = `rgba(255,0,100,${this.opacity})`;
+      ctx.beginPath();
+      ctx.moveTo(this.x,this.y);
+      ctx.bezierCurveTo(this.x,this.y-this.size,this.x+this.size,this.y-this.size,this.x+this.size,this.y);
+      ctx.bezierCurveTo(this.x+this.size,this.y+this.size,this.x,this.y+this.size,this.x,this.y);
+      ctx.fill();
+    }
+    update(){
+      this.y -= this.speed;
+      if(this.y<-20){ this.y=canvas.height+20; this.x=Math.random()*canvas.width; }
+      this.draw();
+    }
   }
 
-  function typeQuote(text){
-    carouselQuote.innerHTML='';
-    let i=0;
-    function step(){ if(i<text.length){ carouselQuote.innerHTML+=text[i]; i++; setTimeout(step,50);} }
-    step();
+  for(let i=0;i<80;i++) hearts.push(new Heart());
+  function animate(){ ctx.clearRect(0,0,canvas.width,canvas.height); hearts.forEach(h=>h.update()); requestAnimationFrame(animate); }
+  animate();
+});    step();
   }
 
 });
