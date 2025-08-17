@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Surprise 🎉</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Mariyam 🎂❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Floating icons -->
   <div id="floating-icons"></div>
 
-  <!-- Quotes (initial intro) -->
-  <div id="quotes-box" class="hidden"></div>
+  <!-- Birthday Intro -->
+  <section id="intro">
+    <h1>🎉 Happy Birthday <span>Mariyam</span> 🎉</h1>
+    <p class="special-day">18 September - A Special Day ❤️</p>
+    <button id="startBtn">Start Surprise</button>
+  </section>
 
-  <!-- Photo deck -->
-  <div id="photo-deck" class="hidden"></div>
+  <!-- Quote Typing -->
+  <section id="quotes" class="hidden">
+    <p id="typedQuote"></p>
+  </section>
 
-  <!-- Active quote under deck -->
-  <div id="active-quote" class="hidden"></div>
+  <!-- Photo Frame Stack -->
+  <section id="photos" class="hidden">
+    <div class="card-stack" id="cardStack"></div>
+  </section>
 
-  <!-- Replay button -->
-  <button id="replay-btn" class="hidden">🔄 Replay Surprise ❤️</button>
+  <!-- Final Message -->
+  <section id="final" class="hidden">
+    <h2>With all my love ❤️</h2>
+    <p>You are the most special part of my life, Mariyam. Wishing you endless happiness, love, and dreams come true. 💖</p>
+  </section>
 
   <!-- Music -->
-  <audio id="music1" src="assets/music/music1.mp3"></audio>
-  <audio id="music2" src="assets/music/music2.mp3"></audio>
+  <audio id="bgMusic1" src="assets/music/music1.mp3" loop></audio>
+  <audio id="bgMusic2" src="assets/music/music2.mp3" loop></audio>
 
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
