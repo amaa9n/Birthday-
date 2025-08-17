@@ -4,42 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Mariyam ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&family=Dancing+Script&family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Floating hearts -->
+  <div class="hearts"></div>
 
-  <canvas id="heart-canvas"></canvas>
-  <div class="floating-icons" id="floating-icons"></div>
+  <h1 class="main-title">Happy Birthday Mariyam ❤️</h1>
 
-  <header class="intro">
-    <h1>For Mariyam ❤️</h1>
-    <p class="hint">Click any floating gift or heart to open your surprise</p>
-  </header>
-
-  <section id="quotes-section" class="stage hidden">
-    <div class="typed-wrap" id="typed-wrap"></div>
-  </section>
-
-  <section id="carousel-section" class="stage hidden">
-    <div id="carousel-container"></div>
-    <div id="carousel-quote" class="typed-wrap"></div>
-  </section>
-
-  <section id="birthday-message" class="stage hidden">
-    <div class="card">
-      <h2>🎉 Special Day</h2>
-      <h1>Mariyam — 18 September</h1>
-      <p class="big">Happy Birthday, my love. You make every day brighter. ✨</p>
-      <div class="extra-quotes">
-        <p>"You light up my life in ways words can't express."</p>
-        <p>"Every day with you is my favorite day."</p>
+  <div class="frames-area">
+    <!-- Frame + Quote Pair -->
+    <div class="photo-quote">
+      <div class="quote">Every love story is beautiful, but ours is my favorite ❤️</div>
+      <div class="frame" draggable="true">
+        <img src="assets/photos/photo1.jpg" alt="Photo 1">
       </div>
     </div>
-  </section>
 
-  <audio id="music1" preload="auto" loop src="assets/music/music1.mp3"></audio>
-  <audio id="music2" preload="auto" loop src="assets/music/music2.mp3"></audio>
+    <div class="photo-quote">
+      <div class="quote">You are the reason my world feels so magical ✨</div>
+      <div class="frame" draggable="true">
+        <img src="assets/photos/photo2.jpg" alt="Photo 2">
+      </div>
+    </div>
+
+    <div class="photo-quote">
+      <div class="quote">With you, every moment becomes unforgettable 💕</div>
+      <div class="frame" draggable="true">
+        <img src="assets/photos/photo3.jpg" alt="Photo 3">
+      </div>
+    </div>
+
+    <div class="photo-quote">
+      <div class="quote">You are not just my love, you are my heart and soul 💖</div>
+      <div class="frame" draggable="true">
+        <img src="assets/photos/photo4.jpg" alt="Photo 4">
+      </div>
+    </div>
+
+    <div class="photo-quote">
+      <div class="quote">I fall for you more deeply every single day 🌹</div>
+      <div class="frame" draggable="true">
+        <img src="assets/photos/photo5.jpg" alt="Photo 5">
+      </div>
+    </div>
+  </div>
+
+  <!-- Music -->
+  <audio id="music1" src="assets/music/music1.mp3" autoplay loop></audio>
 
   <script src="js/script.js"></script>
 </body>
