@@ -3,56 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Mariyam ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Happy Birthday Surprise 🎉</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Floating hearts -->
-  <div class="hearts"></div>
+  <!-- Floating icons -->
+  <div id="floating-icons"></div>
 
-  <h1 class="main-title">Happy Birthday Mariyam ❤️</h1>
+  <!-- Quotes (initial intro) -->
+  <div id="quotes-box" class="hidden"></div>
 
-  <div class="frames-area">
-    <!-- Frame + Quote Pair -->
-    <div class="photo-quote">
-      <div class="quote">Every love story is beautiful, but ours is my favorite ❤️</div>
-      <div class="frame" draggable="true">
-        <img src="assets/photos/photo1.jpg" alt="Photo 1">
-      </div>
-    </div>
+  <!-- Photo deck -->
+  <div id="photo-deck" class="hidden"></div>
 
-    <div class="photo-quote">
-      <div class="quote">You are the reason my world feels so magical ✨</div>
-      <div class="frame" draggable="true">
-        <img src="assets/photos/photo2.jpg" alt="Photo 2">
-      </div>
-    </div>
+  <!-- Active quote under deck -->
+  <div id="active-quote" class="hidden"></div>
 
-    <div class="photo-quote">
-      <div class="quote">With you, every moment becomes unforgettable 💕</div>
-      <div class="frame" draggable="true">
-        <img src="assets/photos/photo3.jpg" alt="Photo 3">
-      </div>
-    </div>
-
-    <div class="photo-quote">
-      <div class="quote">You are not just my love, you are my heart and soul 💖</div>
-      <div class="frame" draggable="true">
-        <img src="assets/photos/photo4.jpg" alt="Photo 4">
-      </div>
-    </div>
-
-    <div class="photo-quote">
-      <div class="quote">I fall for you more deeply every single day 🌹</div>
-      <div class="frame" draggable="true">
-        <img src="assets/photos/photo5.jpg" alt="Photo 5">
-      </div>
-    </div>
-  </div>
+  <!-- Replay button -->
+  <button id="replay-btn" class="hidden">🔄 Replay Surprise ❤️</button>
 
   <!-- Music -->
-  <audio id="music1" src="assets/music/music1.mp3" autoplay loop></audio>
+  <audio id="music1" src="assets/music/music1.mp3"></audio>
+  <audio id="music2" src="assets/music/music2.mp3"></audio>
 
   <script src="js/script.js"></script>
 </body>
