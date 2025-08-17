@@ -1,88 +1,97 @@
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  overflow-x: hidden;
   color: #fff;
+  overflow-x: hidden;
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
 }
 
-.main-title {
+h1 span {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
-  margin: 20px 0;
+  color: #ffebf0;
+}
+
+button {
+  background: #ff4b5c;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  position: relative;
-  z-index: 5;
-}
-
-/* Floating hearts */
-.heart {
-  position: fixed;
-  bottom: -10px;
-  color: rgba(255,255,255,0.6);
-  font-size: 20px;
-  animation: floatUp 6s linear infinite;
-  z-index: 0;
-}
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1); opacity: 1; }
-  100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
-}
-
-/* Frames + Quotes */
-.frames-area {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 100px);
-  overflow: hidden;
-}
-
-.photo-quote {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.quote {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.4rem;
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-  padding: 8px 15px;
-  border-radius: 12px;
-  margin-bottom: 8px;
-  transform: rotateX(10deg);
-  backdrop-filter: blur(5px);
-}
-
-.frame {
-  width: 220px;
-  height: 300px;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-  cursor: grab;
-  transform: perspective(800px) rotateY(5deg);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
   transition: transform 0.2s;
 }
-.frame:active {
-  cursor: grabbing;
-  transform: perspective(800px) rotateY(0deg) scale(1.05);
+button:hover { transform: scale(1.1); }
+
+.hidden { display: none; }
+
+#typedQuote {
+  font-size: 1.4rem;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 600px;
+  min-height: 100px;
+  font-style: italic;
 }
 
-.frame img {
+.card-stack {
+  position: relative;
+  width: 90%;
+  max-width: 320px;
+  height: 420px;
+  margin: 40px auto;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-audio {
-  display: none;
+#final {
+  padding: 40px 20px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+#floating-icons {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.icon {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
 }
